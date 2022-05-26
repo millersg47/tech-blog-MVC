@@ -1,20 +1,29 @@
-<div class="text-center">
-  <h2>{{title}}</h2>
-  <p>{{content}}</p>
-  <p>Created by {{user.username}} on {{format_date date_created}}</p>
-  <p>
-  </p>
-  <p>
-    <button class="btn btn-primary">Submit Comment</button>
-  </p>
-</div>
-
-{{!-- <div class="card" style="width: 18rem;">
+<div class="card" style="width: 75rem;">
   <div class="card-body">
     <h5 class="card-title">{{title}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Created by {{user.username}} on {{format_date date_created}}</h6>
+    <h6 class="card-subtitle mb-2 text-muted">Created by
+      {{user.username}}
+      on
+      {{format_date date_created}}</h6>
     <p class="card-text">{{content}}</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
   </div>
-</div> --}}
+</div>
+
+<div class="card" style="width: 75rem;">
+  <div class="card-body">
+    <h5 class="card-title">Comment</h5>
+    <form>
+      <div class="form-group">
+        <label for="formGroupExampleInput">Add your comments or thoughts below
+          to continue to conversation:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="formGroupExampleInput"
+          placeholder="Example input"
+        />
+      </div>
+      <button type="button" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+</div>
