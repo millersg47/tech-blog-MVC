@@ -9,21 +9,33 @@
   </div>
 </div>
 
+{{! add each to load all comments }}
+{{#each comments as |comment|}}
+  <div class="card" style="width: 75rem;">
+    <div class="card-body">
+      <h6 class="card-title">{{comment.user.username}}</h6>
+      <p> {{comment.comment_text}}</p>
+    </div>
+  </div>
+{{/each}}
+
 <div class="card" style="width: 75rem;">
   <div class="card-body">
     <h5 class="card-title">Comment</h5>
-    <form>
+    <form id="comment-form">
       <div class="form-group">
-        <label for="formGroupExampleInput">Add your comments or thoughts below
-          to continue to conversation:</label>
+        <label for="comment-text">Add your comments or thoughts below to
+          continue to conversation:</label>
         <input
           type="text"
           class="form-control"
-          id="formGroupExampleInput"
+          id="comment-text"
           placeholder="Example input"
         />
       </div>
-      <button type="button" class="btn btn-success">Submit</button>
+      <button type="submit" class="btn btn-success">Submit</button>
     </form>
   </div>
 </div>
+
+<script src="./js/comment.js"> </script>

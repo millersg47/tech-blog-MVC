@@ -1,15 +1,18 @@
-const loginFormHandler = async (event) => {
+const commentFormHandler = async (event) => {
   event.preventDefault();
   try {
     // Collect values from the login form
-    const username = document.querySelector("#username-login").value.trim();
-    const password = document.querySelector("#password-login").value.trim();
+    const comment_text = document.querySelector("#comment-text").value.trim();
+    const post_id =
+      window.location.href.split("/")[
+        window.location.href.split("/").length - 1
+      ];
 
-    if (username && password) {
+    if (comment_text) {
       // Send a POST request to the API endpoint
-      const response = await fetch("/api/users/login", {
+      const response = await fetch("/api/comments", {
         method: "POST",
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ comment_text, post_id }),
         headers: { "Content-Type": "application/json" },
       });
 
@@ -18,7 +21,7 @@ const loginFormHandler = async (event) => {
 
       if (response.ok) {
         // If successful, redirect the browser to the profile page
-        document.location.replace("/dashboard");
+        location.reload();
       } else {
         alert(response.statusText);
       }
@@ -29,5 +32,5 @@ const loginFormHandler = async (event) => {
 };
 
 document
-  .querySelector(".login-form")
-  .addEventListener("submit", loginFormHandler);
+  .querySelector(".comment-form")
+  .addEventListener("submit", commentFormHandler);

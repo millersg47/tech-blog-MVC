@@ -1,14 +1,17 @@
 [
   {
     "title": "Model View Controller",
-    "content": "The Model View Controller is a commonly used design pattern in software development. It follows the principle of separation of concerns and splits parts of a project out so they can be worked on simultaneously. This is often used when large teams are working on projects that need to scale. "
+    "content": "The Model View Controller is a commonly used design pattern in software development. It follows the principle of separation of concerns and splits parts of a project out so they can be worked on simultaneously. This is often used when large teams are working on projects that need to scale. ",
+    "user_id": 1
   },
   {
     "title": "Object Oriented Programming",
-    "content": "Object Oriented Programming, or OOP, is a programming paradigm based on passing data through objects. It is implemented by developers across many different coding languages. The main principles include encapsulation, abstraction, inheritance and polymorphism. Using classes is a great way to implement OOP in your code!"
+    "content": "Object Oriented Programming, or OOP, is a programming paradigm based on passing data through objects. It is implemented by developers across many different coding languages. The main principles include encapsulation, abstraction, inheritance and polymorphism. Using classes is a great way to implement OOP in your code!",
+    "user_id": 2
   },
   {
     "title": "Back End Vs Front End Tech",
-    "content": "This post will cover the different technologies that can be used on the front and back end of the stack. The front end includes HTML, CSS, and code libraries such as Bootstrap. The back end includes expressjs, SQL, MySQL, ORM's like Sequelize and template engines like Handlebars. Javascript is used on the front and back end!"
+    "content": "This post will cover the different technologies that can be used on the front and back end of the stack. The front end includes HTML, CSS, and code libraries such as Bootstrap. The back end includes expressjs, SQL, MySQL, ORM's like Sequelize and template engines like Handlebars. Javascript is used on the front and back end!",
+    "user_id": 3
   }
 ]
