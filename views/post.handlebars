@@ -13,8 +13,8 @@
 {{#each comments as |comment|}}
   <div class="card" style="width: 75rem;">
     <div class="card-body">
-      <h6 class="card-title">{{comment.user.username}}</h6>
       <p> {{comment.comment_text}}</p>
+      <p class="text-right">-- {{comment.user.username}}</p>
     </div>
   </div>
 {{/each}}
