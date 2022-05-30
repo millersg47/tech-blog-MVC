@@ -2,9 +2,10 @@ const router = require("express").Router();
 const { Post, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
+//route to pull all post data and render homepage
 router.get("/", async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+    // Get all posts and include user who wrote the post
     const postData = await Post.findAll({
       include: [
         {
@@ -27,7 +28,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// add includes to pull in comments and associated users
+// route to pull data on one specific post including the user who wrote the post and the comments associated with it
 router.get("/post/:id", async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -60,7 +61,7 @@ router.get("/post/:id", async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
+// route to load the user who is logged in's associated posts and render their dashboard
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -100,12 +101,12 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
+//route to direct user to new post page upon clicking create new post button
 router.get("/newpost", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/dashboard");
+    res.redirect("/newpost");
     return;
   }
-  res.render("newpost");
 });
 
 module.exports = router;

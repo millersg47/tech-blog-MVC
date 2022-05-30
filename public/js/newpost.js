@@ -1,7 +1,7 @@
 const postFormHandler = async (event) => {
   event.preventDefault();
   try {
-    // Collect values from the login form
+    // Collect values from the blog post form
     const postContent = document.querySelector("#post-content").value.trim();
     const postName = document.querySelector("#post-name").value.trim();
 
@@ -28,6 +28,4 @@ const postFormHandler = async (event) => {
   }
 };
 
-document
-  .querySelector(".post-form")
-  .addEventListener("submit", postFormHandler);
+document.querySelector(".new-post").addEventListener("click", postFormHandler);
