@@ -19,23 +19,26 @@
   </div>
 {{/each}}
 
-<div class="card" style="width: 75rem;">
-  <div class="card-body">
-    <h5 class="card-title">Comment</h5>
-    <form id="comment-form">
-      <div class="form-group">
-        <label for="comment-text">Add your comments or thoughts below to
-          continue to conversation:</label>
-        <input
-          type="text"
-          class="form-control"
-          id="comment-text"
-          placeholder="Example input"
-        />
-      </div>
-      <button type="submit" class="btn btn-success">Submit</button>
-    </form>
+{{#if logged_in}}
+  <div class="card" style="width: 75rem;">
+    <div class="card-body">
+      <h5 class="card-title">Comment</h5>
+      <form id="comment-form">
+        <div class="form-group">
+          <label for="comment-text">Add your comments below to continue to
+            conversation:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="comment-text"
+            placeholder="Example input"
+          />
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
   </div>
-</div>
 
-<script src="./js/comment.js"> </script>
+{{/if}}
+
+<script src="/js/comment.js"> </script>

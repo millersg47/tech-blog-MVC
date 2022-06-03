@@ -8,6 +8,7 @@ const commentFormHandler = async (event) => {
         window.location.href.split("/").length - 1
       ];
 
+    console.log(comment_text, post_id);
     if (comment_text) {
       // Send a POST request to the API endpoint
       const response = await fetch("/api/comments", {
@@ -32,5 +33,5 @@ const commentFormHandler = async (event) => {
 };
 
 document
-  .querySelector(".comment-form")
+  .querySelector("#comment-form")
   .addEventListener("submit", commentFormHandler);

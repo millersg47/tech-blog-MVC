@@ -14,10 +14,11 @@
               class="btn btn-sm btn-danger delete"
               data-id="{{post.id}}"
             >DELETE</button>
-            <button
-              class="btn btn-sm btn-warning edit"
-              data-id="{{post.id}}"
-            >EDIT</button>
+            <a href="/editpost/{{post.id}}"><button
+                class="btn btn-sm btn-warning edit"
+                data-id="{{post.id}}"
+              >EDIT</button>
+            </a>
           </div>
         </div>
       </div>
@@ -29,4 +30,4 @@
   <button class="btn create btn-lg btn-block btn-success">Create a New Blog Post</button>
 </a>
 
-<script src="./js/dashboard.js"></script>
+<script src="/js/dashboard.js"></script>

@@ -2,14 +2,14 @@ const postFormHandler = async (event) => {
   event.preventDefault();
   try {
     // Collect values from the blog post form
-    const postContent = document.querySelector("#post-content").value.trim();
-    const postName = document.querySelector("#post-name").value.trim();
+    const content = document.querySelector("#post-content").value.trim();
+    const title = document.querySelector("#post-name").value.trim();
 
-    if (postContent && postName) {
+    if (content && title) {
       // Send a POST request to the API endpoint
       const response = await fetch("/api/posts", {
         method: "POST",
-        body: JSON.stringify({ postContent, postName }),
+        body: JSON.stringify({ content, title }),
         headers: { "Content-Type": "application/json" },
       });
 
@@ -18,7 +18,7 @@ const postFormHandler = async (event) => {
 
       if (response.ok) {
         // If successful, redirect the browser to the profile page
-        location.reload();
+        document.location.replace("/dashboard");
       } else {
         alert(response.statusText);
       }

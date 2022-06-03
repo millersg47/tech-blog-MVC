@@ -103,10 +103,21 @@ router.get("/signup", (req, res) => {
 
 //route to direct user to new post page upon clicking create new post button
 router.get("/newpost", (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect("/newpost");
-    return;
-  }
+  res.render("newpost", {
+    logged_in: req.session.logged_in,
+  });
+  return;
+});
+
+//create handlebars file for this
+router.get("/editpost/:id", withAuth, async (req, res) => {
+  const postData = await Post.findByPk(req.params.id, {});
+  const post = postData.get({ plain: true });
+
+  res.render("editpost", {
+    logged_in: req.session.logged_in,
+    ...post,
+  });
 });
 
 module.exports = router;
