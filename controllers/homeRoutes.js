@@ -109,7 +109,6 @@ router.get("/newpost", (req, res) => {
   return;
 });
 
-//create handlebars file for this
 router.get("/editpost/:id", withAuth, async (req, res) => {
   const postData = await Post.findByPk(req.params.id, {});
   const post = postData.get({ plain: true });
